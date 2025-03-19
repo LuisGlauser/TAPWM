@@ -1,0 +1,48 @@
+Aula 2 - 19/03/2025
+
+Javascript
+-É baseada em objetos? Sim e Não. Você pode usar ela sem objetos
+-Objeto vem da Classe
+-"JavaScript é uma linguagem de programação baseada em scripts, criada pela ECMA"
+-Criada na década de 90 por Brendan Eich a serviço da Netscape
+-Quando lança uma atualização do JavaScript usam o nome ECMAScript
+-O JavaScript é mais do que está definido no ECMA
+-O Primeiro item é o Window
+--Window é dividido em ....
+-Tudo é nó
+-DOM (Document Object Model) Representa a estrutura da pagina web carregada no navegador
+-BOM (Browser Object Model) fornece acesso a funcionalidades do proprio navegador
+
+-JS veio pra adicionar uma interatividade a uma pagina web (HTML é o esqueleto, CSS é a aparência e JS é o movimento)
+-ASP.NET, é uma maneira de organizar as suas paginas no visual estudio.
+-Para executar precisa de um servidor (No windows é IIS)
+
+-Antes usava no Front mas agora tambem é usado no Back-End
+-JS parece com C.
+-O Node não faz uma fila, ele vai resolvendo na hora. Ele não prende os recursos
+
+//Criar um objeto de maneira literal
+var pessoa = {
+	nome = 'João';
+}
+
+//Criar um onjeto sem declarar a classe
+var pessoa = new Object(){
+	pessoa.nome = 'João';
+}
+
+Aplicações JavaScript
+-Criar Janelas pop-up
+-Validação
+
+Comparação Java x JavaScript
+-Java é fortemente Tipado, JS é fracamente tipado.
+-Java é orientado a objetos, JS não é focada em objetados.
+-Java processamento sincrono e JS é assincrona.(Uma função que vem depois pode ocorrer primeiro, ocorre tudo ao msm tempo)
+-JS permite programação funcional (Oq é? É um paradigma de programação)
+
+const add = (x,y) => x + y
+const multiply = (x,y) => add(x,y)*2
+console.log(mulitply(2,3)) = 10
+
+-Se por A \ consegue usar sem quebrar
