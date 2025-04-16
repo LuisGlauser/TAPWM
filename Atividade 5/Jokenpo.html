@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Super Pedra, Papel e Tesoura</title>
-    <script src="Jokenpo.js"></script>
-</head>
-<body>
-    <main>
-        <h1>Pedra, Papel e Tesoura</h1>
-        
-    </main>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Super Pedra, Papel e Tesoura</title>
+        <script src="Jokenpo.js"></script>
+    </head>
+    <body>
+        <main>
+            <h1>Pedra, Papel e Tesoura</h1>
+            <h2>Escolha uma opção:</h2>
+
+            <button id="pedra" onclick="jokenpo(0)">Pedra</button>
+            <button id="papel" onclick="jokenpo(1)">Papel</button>
+            <button id="tesoura" onclick="jokenpo(2)">Tesoura</button>
+
+            <div>Vitórias da Máquina: <p>0</p></div>
+            <div>Vitórias do Jogador: <p>0</p></div>
+        </main>
+    </body>
 </html>
