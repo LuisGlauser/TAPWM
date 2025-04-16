@@ -1,0 +1,75 @@
+body {
+    background-color: darkgoldenrod;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centraliza verticalmente também */
+    min-height: 100vh; /* Garante que o body ocupa toda a altura da tela */
+    margin: 0; /* Remove margens padrão do body */
+}
+
+main {
+    display: flex;
+    flex-direction: column; /* Organiza os elementos verticalmente */
+    align-items: center; /* Centraliza os itens horizontalmente dentro do main */
+    padding: 20px;
+    background-color: gold;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+h1, h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.botão {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #ddd;
+}
+
+img {
+    max-width: 40px;
+    max-height: 40px;
+}
+
+.centralizador {
+    width: 200px;
+    height: auto; /* Ajusta a altura automaticamente */
+    background-color: #e0e0e0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between; /* Espaça o título e o contador */
+    align-items: center;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+}
+
+.centralizador h4 {
+    margin: 0;
+    font-size: 1em;
+}
+
+.centralizador p {
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: bold;
+}

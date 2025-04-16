@@ -4,19 +4,27 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Super Pedra, Papel e Tesoura</title>
-        <script src="Jokenpo.js"></script>
+        <script src="js/Jokenpo.js"></script>
+        <link rel="stylesheet" href="css/Jokenpo.css">
     </head>
     <body>
         <main>
             <h1>Pedra, Papel e Tesoura</h1>
             <h2>Escolha uma opção:</h2>
 
-            <button id="pedra" onclick="jokenpo(0)">Pedra</button>
-            <button id="papel" onclick="jokenpo(1)">Papel</button>
-            <button id="tesoura" onclick="jokenpo(2)">Tesoura</button>
-
-            <div>Vitórias da Máquina: <p>0</p></div>
-            <div>Vitórias do Jogador: <p>0</p></div>
+            <div class="botão">
+                <button id="pedra" onclick="jogar(0)"><img src="https://cdn.iconscout.com/icon/free/png-256/free-stone-icon-download-in-svg-png-gif-file-formats--city-basic-icons-pack-industry-449919.png?f=webp&w=256" alt="preda"></button>
+                <button id="papel" onclick="jogar(1)"><img src="https://icon-library.com/images/sheet-of-paper-icon/sheet-of-paper-icon-11.jpg" alt=""></button>
+                <button id="tesoura" onclick="jogar(2)"><img src="https://cdn-icons-png.flaticon.com/512/195/195816.png" alt=""></button>
+            </div>
+            <div class="centralizador">
+                <h4>Vitórias da Máquina: </h4>
+                <p id="vitorias-maquina"> 0</p>
+            </div>
+            <div class="centralizador">
+                <h4>Vitórias da Jogador: </h4>
+                <p id="vitorias-jogador"> 0</p>
+            </div>
         </main>
     </body>
 </html>
