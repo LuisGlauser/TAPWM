@@ -7,7 +7,7 @@ body{
 }
 
 form{
-    background-color: #e98556;
+    background-color:azure;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -15,6 +15,14 @@ form{
     margin: auto;
 
     font-family: 'Courier New', Courier, monospace;
+}
+form button{
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .content{
