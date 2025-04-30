@@ -1,0 +1,49 @@
+
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    align-self: center;
+}
+img{
+    max-width: 300px;
+    max-height: 300px;
+}
+.topo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+}
+.footer{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+}
+
+button{
+    background-color: #0d5cd3; /* Green */
+    border: none;
+    border-radius: 10px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+button :hover {
+    background-color: #c2c2c2; /* Green */
+    color: white;
+    border: 2px solid #0b3e8b;
+    transition: 0.3s;
+}
