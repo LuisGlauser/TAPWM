@@ -1,0 +1,78 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo do site */
+body {
+    background: linear-gradient(to bottom right, #fff8dc, #fef6e4);
+    font-family: Arial, sans-serif;
+    color: #333;
+    padding: 20px;
+}
+
+/* Bloco geral dos formulários */
+form {
+    background-color: #fffaf0;
+    border: 2px solid #ffd700;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Títulos */
+form h1 {
+    color: #b8860b;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+/* Inputs */
+input[type="number"],
+input[type="text"] {
+    padding: 10px;
+    margin: 5px 5px 15px 0;
+    border: 1px solid #daa520;
+    border-radius: 5px;
+    width: 200px;
+    font-size: 1em;
+}
+
+/* Botões */
+button {
+    background-color: #ffd700;
+    color: #000;
+    border: none;
+    padding: 10px 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ffcc00;
+}
+
+/* Resultados */
+h4 {
+    color: #8b7500;
+    margin: 10px 0;
+}
+
+p {
+    display: inline;
+    font-weight: bold;
+    color: #a0522d;
+}
+
+/* Labels */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #a97b00;
+}

@@ -4,20 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercicio de Função</title>
+    <link rel="stylesheet" href="ExercicioFuncao.css">
 </head>
 <body>
-    <div>
-        <h1>Comparador tamanho número</h1>
-        <input type="Number" id="num1">
-        <input type="Number" id="num2">
-        <input type="Number" id="num3">
-
+    <form action="">
         <div>
-            <h4 >O maior número é: <p id="Maior"></p></h4>
+            <h1>Comparador tamanho de números</h1>
+            <input type="Number" id="num1" required>
+            <input type="Number" id="num2" required>
+            <input type="Number" id="num3" required>
+
+            <div>
+                <h4 >O maior número é: <p id="Maior"></p></h4>
+            </div>
+            <button onclick="maior(event)"> Verificar </button>  
         </div>
-        <button onclick="maior()"> Verificar maior</button>  
-    </div>
-    <div></div>
+    </form>
+    
+    <form action="">
+        <div>
+            <h1>Organizador Ordem Crescente</h1>
+            <input type="Number" id="crs1" required>
+            <input type="Number" id="crs2" required>
+            <input type="Number" id="crs3" required>
+
+            <div>
+                <h4 >O 1° número é: <p id="crsMaior"></p></h4>
+                <h4 >O 2° número é: <p id="crsMeio"></p></h4>
+                <h4 >O 3° número é: <p id="crsMenor"></p></h4>
+            </div>
+            <button onclick="crescente(event)">Ordenar</button> 
+        
+        </div>
+    </form>
+    
+    <form action="">
+        <div>
+            <h1>Verificador Palíndromo</h1>
+            <label for="">Insira uma palavra para checar se é palíndromo</label>
+            <input type="text" id="palindromo" required>
+            
+            <button onclick="ehPalindromo(event)">Verificar</button>
+            <p><p id="palavra"></p> <span id="ehPalindromo"></span></p>
+        </div>
+    </form>
+
+    <form action="">
+        <div>
+            <h1>Verificador Subconjuntos</h1>
+            <label for="">Insira a 1° palavra</label> <br>
+            <input type="text" id="palavra1" required> <br>
+            <label for="">Insira a 2° palavra</label> <br>
+            <input type="text" id="palavra2" required>
+
+            <button onclick="verificarSubconjunto(event)">Verificar</button>
+            <p id="r1"></p> <span id="r2"></span> <p id="r3"></p>
+        </div>
+    </form>
 
 </body>
 <script src="ExercicioFuncao.js"></script>
