@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formas de Criar Objetos</title>
+</head>
+<body>
+    <script>
+        var aluno1 = new Object();
+
+        aluno1.ra = "00001234";
+        aluno1.nome = "Ronaldo";
+
+        alert(`RA = ${aluno1.ra} \nNome = ${aluno1.nome}`);
+
+
+
+        var aluno2 = {}; // Usando colchetes
+            aluno2.ra = "1234";
+            aluno2["nome"] = "Mike";
+        alert(`RA = ${aluno2.ra} \nNome = ${aluno2.nome}`);
+
+        
+        
+        
+        aluno2["email do aluno"] = "mike@gmail.com"; // E possivel por espaço quando delcara nome
+        alert(aluno2["email do aluno"]);
+
+        
+        
+        
+        var aluno3 = { // Literal
+            ra: "123456",
+            nome: "Isadora", // virgula opcional
+        }
+        alert(`RA = ${aluno3.ra} \nNome = ${aluno3.nome}`)
+
+        
+        
+        
+        function Aluno(ra, nome){
+            //var teste: private
+            // let teste1: private
+            this.ra = ra;
+            this.nome = nome;
+            this.MostraDados = function() {
+                return `RA = ${this.ra} \nNome = ${this.nome}`;
+            }
+        }
+        var aluno4 = new Aluno("654321", "Karole");
+        alert(aluno4.MostraDados());
+        alert(aluno4.nome);
+
+        
+        
+        
+        
+        var aluno5 = {};
+        var nome_propriedade = "ra";
+        aluno5[nome_propriedade] = "123";
+        aluno5["nome"] = "Narina"
+        alert(aluno5.ra + " " + aluno5.nome);
+
+        
+        
+        function Aluno2(){
+            var ra;
+            var nome;
+            this.setRa = function (value) {
+                this.ra = value;
+            }
+            this.getRa = function () {
+                return this.ra;
+            }
+
+            this.setNome = function (value) {
+                this.nome = value;
+            }
+            this.getNome = function () {
+                return this.nome;
+            }
+        }
+        var aluno6 = new Aluno2();
+        aluno6.setRa("1234");
+        aluno6.setNome("Bruna Gatinha");
+
+        alert(aluno6.getRa() + " " + aluno6.getNome());
+
+        
+        
+        
+        // Herança
+        function AlunoADS(){
+            var numLab
+            this.setNumLab = function (value){
+                this.numLab = value;
+            }
+            this.getNumLab = function (){
+                return this.numLab;
+            }
+        }
+        AlunoADS.prototype = new Aluno2();
+        var aluno7 = new AlunoADS();
+        aluno7.setNome("Gabriel Fonseca");
+        aluno7.setRa("23445");
+        aluno7.setNumLab(5);
+        alert(`Nome: ${aluno7.getNome()} \nRA: ${aluno7.getRa()} \nNúmero Laboratório ${aluno7.getNumLab()}`);
+        
+        class Aluno1{
+            constructor(){
+                this.setRa = function (value) {
+                this.ra = value;
+                }
+                this.getRa = function () {
+                    return this.ra;
+                }
+
+                this.setNome = function (value) {
+                    this.nome = value;
+                }
+                this.getNome = function () {
+                    return this.nome;
+                }
+            }
+        }
+        var objAluno = new Aluno1();
+        objAluno.setNome("Bruna Gatissima");
+        objAluno.setRa("2312");
+        alert(`Nome = ${objAluno.getNome()} \nRA = ${objAluno.getRa()}`);
+    </script>
+</body>
+</html>
