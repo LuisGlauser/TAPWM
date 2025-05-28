@@ -128,6 +128,96 @@
         objAluno.setNome("Bruna Gatissima");
         objAluno.setRa("2312");
         alert(`Nome = ${objAluno.getNome()} \nRA = ${objAluno.getRa()}`);
+
+        //herança
+        class AlunoADS1 extends Aluno1 {
+            constructor(){
+                // super chama o construtor da classe pai
+                super();
+                this.numLab;
+            }
+            setNumLab(value){
+                this.numLab = value;
+            }
+            getNumLab(){
+                return this.numLab;
+            }
+        }
+        var objAlunoADS = new AlunoADS1();
+        objAlunoADS.setNome("Luís Felipe");
+        objAlunoADS.setRa("0031432512011");
+        objAlunoADS.setNumLab(6);
+        alert( 
+              `Nome: ${objAlunoADS.getNome()} \n` + 
+              `RA: ${objAlunoADS.getRa()} \n` + 
+              `Número Laboratório: ${objAlunoADS.getNumLab()}`
+            );
+        
+        //Cópia de Objetos
+        var obj1 = new Object();
+        var obj2 = obj1;
+        obj1.nome = "Matheus";
+        alert(obj2.nome); // Matheus
+
+        // 8
+        //Metodos e atributos - públicos e privados
+        class ContaBancaria{
+            #cpf; // Atributo privado
+
+            constructor(nome, saldoInicial){
+                this.nome = nome; // Atributo público
+                this.saldo = saldoInicial; // Atributo público
+            }
+            setCpf(value){
+                this.#cpf = value; // precisa do # para acessar o atributo privado
+            }
+            getCpf(){
+                return this.#cpf;
+            }
+            getSaldo(){
+                return this.saldo;
+            }
+            //metodo oublico
+            depositar(valor){
+                this.saldo += valor;
+                this.#registrarTransacao(valor);
+            }
+            // método privado
+            #registrarTransacao(valor){
+            console.log(`Depósto de R$ ${valor} realizado.
+            Saldo R$ ${this.saldo} para cpf ${this.getCpf()} ou ${this.#cpf}`); 
+            }
+        }
+        const conta = new ContaBancaria("Miguel", 20);
+        conta.setCpf("123.456.789-00");
+        conta.depositar(5);
+        
+        // 9
+        // Objetos com Array
+        const arr = [
+            ['Código', 1],
+            ['Nome', "João"],
+            ['Idade', 30]
+        ]
+        //deu erro embaixo
+        const objArr = Object.fromEntries(arr);
+        alert(objArr); // imprime object
+        alert(objArr.Nome); //Imprime Nome
+        alert(JSON.stringify(objArr)); // Converte o objeto para string JSON
+    
+        // alteração no prototipo reflete no novo
+        const objEmpresa = {
+            empresa: '2F do Brasil'
+        };
+        const funcionario = Object.create(objEmpresa, {
+            nome: {
+                value: 'José Carlos'
+            },
+            endereco: {
+                value: 'Av. São Paulo'
+            }
+        })
+        console.log(funcionario.empresa);
     </script>
 </body>
 </html>
