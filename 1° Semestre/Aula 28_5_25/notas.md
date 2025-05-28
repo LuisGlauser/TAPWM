@@ -1,6 +1,20 @@
 # Revisão
+## Tipos de Função
+### Declarada
+```
+function soma(x,y){
+  return x+y
+}
+```
+### Expressão de Função (Anônima)
 
-## Quais as Formas?
+### De Flecha
+``` 
+soma = (x,y) = > {
+  return x+y
+}
+```
+## Quais as Formas de Declarar Objetos?
 ### 1. Declarando Objetos <br>
 ```
   var aluno1 = new Object();
@@ -132,4 +146,36 @@ class ContaBancaria{
   const conta = new ContaBancaria("Miguel", 20);
   conta.setCpf("123.456.789-00");
   conta.depositar(5);
+```
+### 9. Objeto com Array
+- Está com erro
+```
+const arr = [
+      ['Código', 1],
+      ['Nome', "João"],
+      ['Idade', 30]
+  ]
+  //deu erro embaixo
+  const objArr = Object.fromEntries(arr);
+  alert(objArr); // imprime object
+  alert(objArr.Nome); //Imprime Nome
+  alert(JSON.stringify(objArr)); // Converte o objeto para string JSON
+```
+
+### 10. Alteração no Prototipo altera o Novo
+
+```
+    // alteração no prototipo reflete no novo
+    const objEmpresa = {
+        empresa: '2F do Brasil'
+    };
+    const funcionario = Object.create(objEmpresa, {
+        nome: {
+            value: 'José Carlos'
+        },
+        endereco: {
+            value: 'Av. São Paulo'
+        }
+    })
+    console.log(funcionario.empresa);
 ```
