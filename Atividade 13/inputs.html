@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 13</title>
+    <style>
+        /* Estilo geral da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Estilo do label e input de texto */
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#inputTexto {
+    padding: 10px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Espaçamento entre elementos */
+br {
+    line-height: 1.5em;
+}
+
+/* Estilo dos radio buttons */
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+input[type="radio"] + label {
+    margin-right: 15px;
+    font-size: 15px;
+}
+
+/* Container opcional para melhor alinhamento */
+.container {
+    background-color: #fff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <label for="inputTexto">Insira Texto:</label>
+        <input type="text" id="inputTexto">
+        <br><br>
+
+        <input type="radio" name="opcao" id="opcao1" value="maiuscula">
+        <label for="opcao1">Maiúscula</label>
+        <input type="radio" name="opcao" id="opcao2" value="minuscula">
+        <label for="opcao2">Minúscula</label>
+    </div>
+
+
+    <script>
+        // Seleciona elementos
+        const inputTexto = document.getElementById("inputTexto");
+        const opcao1 = document.getElementById("opcao1");
+        const opcao2 = document.getElementById("opcao2");
+
+        // Adiciona eventos nos radio buttons
+        opcao1.addEventListener("change", function() {
+            if (opcao1.checked) {
+                inputTexto.value = inputTexto.value.toUpperCase();
+            }
+        });
+
+        opcao2.addEventListener("change", function() {
+            if (opcao2.checked) {
+                inputTexto.value = inputTexto.value.toLowerCase();
+            }
+        });
+    </script>
+</body>
+</html>

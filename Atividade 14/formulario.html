@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Pesquisa</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 100%;
+            max-width: 600px;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 24px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #444;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        textarea:focus {
+            border-color: #4a90e2;
+            outline: none;
+        }
+        
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .radio-group {
+            margin-top: 8px;
+        }
+        
+        .radio-option {
+            margin-bottom: 10px;
+        }
+        
+        .radio-option label {
+            display: inline;
+            font-weight: normal;
+            margin-left: 8px;
+        }
+        
+        .error {
+            color: #d9534f;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+        
+        button {
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #357abD;
+        }
+        
+        .message {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 4px;
+            display: none;
+            text-align: center;
+        }
+        
+        .success {
+            background-color: #dff0d8;
+            color: #3c763d;
+            border: 1px solid #d6e9c6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Formulário de Pesquisa</h1>
+        <form id="meuFormulario" onsubmit="return validarFormulario()">
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome">
+                <div id="nomeError" class="error">O nome deve ter pelo menos 10 caracteres</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+                <div id="emailError" class="error">Por favor, insira um email válido</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="comentario">Comentário:</label>
+                <textarea id="comentario" name="comentario"></textarea>
+                <div id="comentarioError" class="error">O comentário deve ter pelo menos 20 caracteres</div>
+            </div>
+            
+            <div class="form-group">
+                <label>Pesquisa:</label>
+                <div>Primeira vez nesta página?</div>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="sim" name="pesquisa" value="sim">
+                        <label for="sim">Sim</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="nao" name="pesquisa" value="nao">
+                        <label for="nao">Não</label>
+                    </div>
+                </div>
+                <div id="pesquisaError" class="error">Por favor, selecione uma opção</div>
+            </div>
+            
+            <button type="submit">Enviar</button>
+        </form>
+        
+        <div id="mensagemSucesso" class="message success"></div>
+    </div>
+
+    <script>
+        function validarFormulario() {
+            // Limpar mensagens de erro anteriores
+            document.querySelectorAll('.error').forEach(error => {
+                error.style.display = 'none';
+            });
+            document.getElementById('mensagemSucesso').style.display = 'none';
+            
+            let isValid = true;
+            
+            // Validar nome (pelo menos 10 caracteres)
+            const nome = document.nomeform.elements['nome'].value;
+            if (nome.length < 10) {
+                document.getElementById('nomeError').style.display = 'block';
+                isValid = false;
+            }
+            
+            // Validar email
+            const email = document.nomeform.elements['email'].value;
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                document.getElementById('emailError').style.display = 'block';
+                isValid = false;
+            }
+            
+            // Validar comentário (pelo menos 20 caracteres)
+            const comentario = document.nomeform.elements['comentario'].value;
+            if (comentario.length < 20) {
+                document.getElementById('comentarioError').style.display = 'block';
+                isValid = false;
+            }
+            
+            // Validar pesquisa (obrigatório)
+            const pesquisaSelecionada = document.querySelector('input[name="pesquisa"]:checked');
+            if (!pesquisaSelecionada) {
+                document.getElementById('pesquisaError').style.display = 'block';
+                isValid = false;
+            }
+            
+            // Se o formulário for válido, mostrar mensagem
+            if (isValid) {
+                const mensagemSucesso = document.getElementById('mensagemSucesso');
+                if (pesquisaSelecionada.value === 'nao') {
+                    mensagemSucesso.textContent = 'Que bom que você voltou a visitar esta página!';
+                } else {
+                    mensagemSucesso.textContent = 'Volte sempre a esta página!';
+                }
+                mensagemSucesso.style.display = 'block';
+                
+                // Não enviar o formulário (só para demonstração)
+                return false;
+            }
+            
+            return false; // Impede o envio para demonstração
+        }
+        
+        // Adicionar name="nomeform" ao formulário para funcionar com document.nomeform
+        document.getElementById('meuFormulario').name = 'nomeform';
+    </script>
+</body>
+</html>
