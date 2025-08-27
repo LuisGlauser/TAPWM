@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos Fatec Sorocaba</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+        
+        h1 {
+            color: #1a2a6c;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+        
+        .logo {
+            width: 120px;
+            margin-bottom: 20px;
+        }
+        
+        .select-container {
+            margin: 25px 0;
+            position: relative;
+        }
+        
+        select {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #1a2a6c;
+            border-radius: 8px;
+            background-color: white;
+            font-size: 16px;
+            color: #333;
+            cursor: pointer;
+            appearance: none;
+            transition: all 0.3s ease;
+        }
+        
+        select:focus {
+            outline: none;
+            border-color: #fdbb2d;
+            box-shadow: 0 0 0 3px rgba(253, 187, 45, 0.3);
+        }
+        
+        .select-container::after {
+            content: "▼";
+            font-size: 14px;
+            color: #1a2a6c;
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+        
+        .info {
+            background-color: #f8f9fa;
+            border-left: 4px solid #1a2a6c;
+            padding: 15px;
+            margin-top: 20px;
+            text-align: left;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #555;
+        }
+        
+        .info h3 {
+            color: #1a2a6c;
+            margin-bottom: 8px;
+        }
+        
+        footer {
+            margin-top: 25px;
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img class="logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNDAgODAiPjxwYXRoIGZpbGw9IiMxYTJhNmMiIGQ9Ik0yMCA0MGExNSAxNSAwIDEgMSAzMCAwIDE1IDE1IDAgMSAxIC0zMCAwIi8+PHBhdGggZmlsbD0iI2IyMWYxZiIgZD0iTTcwIDQwYTE1IDE1IDAgMSAxIDMwIDAgMTUgMTUgMCAxIDEgLTMwIDAiLz48cGF0aCBmaWxsPSIjZmRiYjJkIiBkPSJNMTIwIDQwYTE1IDE1IDAgMSAxIDMwIDAgMTUgMTUgMCAxIDEgLTMwIDAiLz48cGF0aCBmaWxsPSIjMWExYjQ1IiBkPSJNMTcwIDQwYTE1IDE1IDAgMSAxIDMwIDAgMTUgMTUgMCAxIDEgLTMwIDAiLz48dGV4dCB4PSIyMCIgeT0iNzUiIGZpbGw9IiMxYTJhNmMiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCI+RkFURUMgU09ST0NBQkE8L3RleHQ+PC9zdmc+" alt="Fatec Sorocaba Logo">
+        <h1>Selecione um Curso</h1>
+        
+        <div class="select-container">
+            <select id="cursoSelect" onchange="abrirCurso()">
+                <option value="">-- Selecione um curso --</option>
+                <option value="ads">Análise e Desenvolvimento de Sistemas</option>
+                <option value="eletronica">Eletrônica Automotiva</option>
+                <option value="fabricacao">Fabricação Mecânica</option>
+                <option value="gestao">Gestão Empresarial</option>
+                <option value="logistica">Logística</option>
+                <option value="manufatura">Manufatura Avançada</option>
+                <option value="polimeros">Polímeros</option>
+                <option value="projetos">Projetos Mecânicos</option>
+                <option value="qualidade">Gestão da Qualidade</option>
+                <option value="metalurgia">Processos Metalúrgicos</option>
+            </select>
+        </div>
+        
+        <div class="info">
+            <h3>Informações</h3>
+            <p>Selecione um curso acima para abrir uma nova janela com informações detalhadas sobre ele. A nova janela terá tamanho de 600x300 pixels.</p>
+        </div>
+        
+        <footer>
+            <p>Fatec Sorocaba - &copy; 2023 Todos os direitos reservados</p>
+        </footer>
+    </div>
+
+    <script>
+        function abrirCurso() {
+            const select = document.getElementById('cursoSelect');
+            const curso = select.value;
+            
+            if (!curso) return;
+            
+            // Dados dos cursos
+            const cursos = {
+                ads: {
+                    nome: "Análise e Desenvolvimento de Sistemas",
+                    info: "Curso focado no desenvolvimento de software, abrangendo programação, banco de dados, engenharia de software e gestão de projetos de TI.",
+                    periodo: "Período: Matutino e Noturno",
+                    duracao: "Duração: 6 semestres"
+                },
+                eletronica: {
+                    nome: "Eletrônica Automotiva",
+                    info: "Curso que prepara profissionais para atuar no desenvolvimento e manutenção de sistemas eletrônicos veiculares.",
+                    periodo: "Período: Vespertino e Noturno",
+                    duracao: "Duração: 6 semestres"
+                },
+                fabricacao: {
+                    nome: "Fabricação Mecânica",
+                    info: "Curso voltado para processos de fabricação mecânica, usinagem, controle de qualidade e gestão da produção.",
+                    periodo: "Período: Integral",
+                    duracao: "Duração: 6 semestres"
+                },
+                gestao: {
+                    nome: "Gestão Empresarial",
+                    info: "Curso que forma gestores com conhecimentos em administração, finanças, marketing e recursos humanos.",
+                    periodo: "Período: Noturno",
+                    duracao: "Duração: 6 semestres"
+                },
+                logistica: {
+                    nome: "Logística",
+                    info: "Curso focado em cadeia de suprimentos, gestão de transportes, armazenagem e distribuição de produtos.",
+                    periodo: "Período: Vespertino e Noturno",
+                    duracao: "Duração: 6 semestres"
+                },
+                manufatura: {
+                    nome: "Manufatura Avançada",
+                    info: "Curso que aborda tecnologias de manufatura aditiva, robótica, automação e indústria 4.0.",
+                    periodo: "Período: Integral",
+                    duracao: "Duração: 6 semestres"
+                },
+                polimeros: {
+                    nome: "Polímeros",
+                    info: "Curso voltado para o processamento, desenvolvimento e aplicação de materiais poliméricos.",
+                    periodo: "Período: Integral",
+                    duracao: "Duração: 6 semestres"
+                },
+                projetos: {
+                    nome: "Projetos Mecânicos",
+                    info: "Curso que forma profissionais para atuar no desenvolvimento de projetos mecânicos utilizando ferramentas de CAD/CAE/CAM.",
+                    periodo: "Período: Integral",
+                    duracao: "Duração: 6 semestres"
+                },
+                qualidade: {
+                    nome: "Gestão da Qualidade",
+                    info: "Curso focado em sistemas de gestão da qualidade, metrologia, normas técnicas e processos de certificação.",
+                    periodo: "Período: Noturno",
+                    duracao: "Duração: 6 semestres"
+                },
+                metalurgia: {
+                    nome: "Processos Metalúrgicos",
+                    info: "Curso que aborda processos siderúrgicos, fundição, tratamentos térmicos e ensaios de materiais.",
+                    periodo: "Período: Integral",
+                    duracao: "Duração: 6 semestres"
+                }
+            };
+            
+            // Confirmar a abertura da janela
+            const confirmacao = confirm(`Deseja abrir informações sobre o curso de ${cursos[curso].nome}?`);
+            
+            if (confirmacao) {
+                // Abrir nova janela com as dimensões especificadas
+                const novaJanela = window.open('', '_blank', 'width=600,height=300,resizable=yes,scrollbars=yes');
+                
+                // Conteúdo da nova janela
+                novaJanela.document.write(`
+                    <!DOCTYPE html>
+                    <html>
+                    <head>
+                        <title>${cursos[curso].nome}</title>
+                        <style>
+                            body {
+                                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                                margin: 20px;
+                                background-color: #f9f9f9;
+                                color: #333;
+                            }
+                            h1 {
+                                color: #1a2a6c;
+                                border-bottom: 2px solid #fdbb2d;
+                                padding-bottom: 10px;
+                            }
+                            .info {
+                                margin-top: 20px;
+                                line-height: 1.6;
+                            }
+                            .destaque {
+                                background-color: #fff4e0;
+                                padding: 15px;
+                                border-radius: 5px;
+                                margin: 15px 0;
+                                border-left: 4px solid #fdbb2d;
+                            }
+                            .voltar {
+                                display: inline-block;
+                                margin-top: 20px;
+                                padding: 8px 15px;
+                                background-color: #1a2a6c;
+                                color: white;
+                                text-decoration: none;
+                                border-radius: 4px;
+                            }
+                        </style>
+                    </head>
+                    <body>
+                        <h1>${cursos[curso].nome}</h1>
+                        <div class="info">
+                            <p>${cursos[curso].info}</p>
+                            <div class="destaque">
+                                <p><strong>${cursos[curso].periodo}</strong></p>
+                                <p><strong>${cursos[curso].duracao}</strong></p>
+                            </div>
+                            <p>Para mais informações, entre em contato com a Fatec Sorocaba:</p>
+                            <p>Telefone: (15) 3238-5250</p>
+                            <p>E-mail: fatecsorocaba@fatec.sp.gov.br</p>
+                        </div>
+                        <a href="#" class="voltar" onclick="window.close()">Fechar Janela</a>
+                    </body>
+                    </html>
+                `);
+                novaJanela.document.close();
+            } else {
+                // Resetar a seleção se o usuário cancelar
+                select.selectedIndex = 0;
+            }
+        }
+    </script>
+</body>
+</html>
